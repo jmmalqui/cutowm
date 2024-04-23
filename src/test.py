@@ -19,9 +19,7 @@ class Game:
         self.clock = pygame.Clock()
         self.display = pygame.display.set_mode([1920 / 2, 1080 / 2], pygame.RESIZABLE)
         self.winman = cuto.CTManager()
-        self.winman.internal_win_sep = 20
         self.show_bg = True
-
         self.somewindow = cuto.CTWindow(self.winman, [320, 220], "Cuto window")
         cuto.couple(
             self.somewindow,
@@ -43,7 +41,6 @@ class Game:
         ),
 
         self.winman.build()
-        self.bg = pygame.image.load("res/testimg.jpg")
         self.running = True
 
     def check_events(self):
@@ -55,10 +52,6 @@ class Game:
     def update(self): ...
     def render(self):
         self.display.fill("black")
-        if self.show_bg:
-            self.display.blit(
-                self.bg, self.bg.get_rect(center=self.display.get_rect().center)
-            )
         self.winman.render(self.display)
         pygame.display.flip()
 
