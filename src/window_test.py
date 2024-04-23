@@ -39,11 +39,11 @@ class Game:
                 "Name",
                 "Choose",
             ),
-            cuto.CTImage("testimg.jpg", [120, 120]),
+            cuto.CTImage("res/testimg.jpg", [120, 120]),
         ),
 
         self.winman.build()
-        self.bg = pygame.image.load("testimg.jpg")
+        self.bg = pygame.image.load("res/testimg.jpg")
         self.running = True
 
     def check_events(self):
